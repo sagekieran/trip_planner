@@ -6,6 +6,7 @@ class TripPlanner
   attr_reader :user, :forecast, :recommendation
   
   def initialize
+    @recommendation = []
   end
   
   def plan
@@ -36,7 +37,6 @@ class TripPlanner
         puts "Please enter a valid integer greater than 0."
       end
     end
-    
     @user = User.new(user, city, duration)
   end
   
@@ -68,16 +68,14 @@ class TripPlanner
   end
   
   def collect_clothes
-    @recommendation = []
     @forecast.each do |weather|
-      @recommendation = @recommendation | Weather.clothing_for(weather.min_temp) | Weather.clothing_for(weather.max_temp)
-
+      @recommendation = @recommendation | weather.appropriate_clothing
     end
   end
   
   def collect_accessories
     @forecast.each do |weather|
-      @recommendation = @recommendation | Weather.accessories_for(weather.condition)
+      @recommendation = @recommendation | weather.appropriate_accessories
     end
   end
 
@@ -181,7 +179,18 @@ class Weather
       end
     end
   end
+
+  def appropriate_clothing
+    Weather.clothing_for(self.min_temp) | Weather.clothing_for(self.max_temp)
+  end
+      
   
+  def appropriate_accessories
+    Weather.accessories_for(self.condition) 
+  end
+
+
+
 end
 
 class User
