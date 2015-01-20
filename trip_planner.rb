@@ -95,26 +95,26 @@ class Weather
       ]
     },
     {
-      min_temp: 0.1, max_temp: 32,
+      min_temp: 0.01, max_temp: 32,
       recommendation: [
         "insulated parka", "fleece-lined jeans",
         "mittens", "knit hat", "scarf"
       ]
     },
     {
-      min_temp: 32.1, max_temp: 50,
+      min_temp: 32.01, max_temp: 50,
       recommendation: [
         "coat", "jeans", "scarf"
       ]
     },
     {
-      min_temp: 50.1, max_temp: 75,
+      min_temp: 50.01, max_temp: 75,
       recommendation: [
         "sweater", "light jacket", "jeans"
       ]
     },
     {
-      min_temp: 75.1, max_temp: 120,
+      min_temp: 75.01, max_temp: 120,
       recommendation: [
         "shorts", "t-shirt"
       ]
@@ -135,7 +135,7 @@ class Weather
       ]
     },
     {
-      condition: [800, 803],
+      condition: [800, 804],
       recommendation: [
         "sun screen", "sun glasses"
       ]
