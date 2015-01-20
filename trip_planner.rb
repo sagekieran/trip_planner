@@ -141,6 +141,18 @@ class Weather
       ]
     },
     {
+      condition: [701, 781],
+      recommendation: [
+        
+      ]
+    },
+    {
+      condition: [900, 906],
+      recommendation: [
+        
+      ]
+    },
+    {
       condition: [956, 960],
       recommendation: [
         "windbreaker"
